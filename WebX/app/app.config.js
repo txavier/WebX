@@ -5,6 +5,8 @@
         .module('app')
         .config(config);
 
+    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
+
     function config($routeProvider, $locationProvider, $httpProvider) {
         // Configure the security token bearer interceptor.
         $httpProvider.interceptors.push('authInterceptorService');
@@ -31,7 +33,7 @@
                 controllerAs: 'vm'
             })
             .when('/home', {
-                templateUrl: '/app/home/home.html',
+                templateUrl: 'app/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'
             })
