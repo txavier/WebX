@@ -93,15 +93,15 @@
             }
         }
 
-        function getEngineers(sectionName) {
-            return $http.get(apiUrl + 'engineers/getEngineers', { params: { sectionName: sectionName } })
-                    .then(getEngineersComplete, getEngineersFailed);
+        function getUsers(sectionName) {
+            return $http.get(apiUrl + 'users/getUsers', { params: { sectionName: sectionName } })
+                    .then(getUsersComplete, getUsersFailed);
 
-            function getEngineersComplete(response) {
+            function getUsersComplete(response) {
                 return response.data;
             }
 
-            function getEngineersFailed(error) {
+            function getUsersFailed(error) {
                 errorService.handleError(error);
 
                 return $q.reject(error);
@@ -193,7 +193,7 @@
         }
 
         function getLoggedInUser() {
-            return $http.get('api/engineers/getLoggedInUser', { cache: true })
+            return $http.get('api/users/getLoggedInUser', { cache: true })
                         .then(getLoggedInUserCompleted)
                         .catch(getLoggedInUserFailed);
 

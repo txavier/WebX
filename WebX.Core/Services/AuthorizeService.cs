@@ -15,9 +15,9 @@ namespace WebX.Core.Services
     /// </summary>
     public class AuthorizeService : IAuthorizeService
     {
-        private IService<engineer> _engineerService;
+        private IService<user> _engineerService;
 
-        public AuthorizeService(IService<engineer> engineerService)
+        public AuthorizeService(IService<user> engineerService)
         {
             _engineerService = engineerService;
         }

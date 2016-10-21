@@ -10,11 +10,11 @@ namespace WebX.Data
     public partial class EfDataDbContext : TrackerEnabledDbContext.TrackerContext
     {
         public EfDataDbContext()
-            : base("name=EfDataDbContext")
+            : base("name=DefaultConnection")
         {
         }
 
-        public virtual DbSet<engineer> engineers { get; set; }
+        public virtual DbSet<user> users { get; set; }
 
         public virtual DbSet<userActionLog> userActionLogs { get; set; }
 

@@ -118,7 +118,11 @@
     <Compile Include="Interfaces\IContractDocumentService.cs" />
     <Compile Include="Interfaces\IEfQueryContractTotalsPerSection.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
-    <Compile Include="Models\engineer.cs" />
+    <Compile Include="Models\author.cs" />
+    <Compile Include="Models\blogEntry.cs" />
+    <Compile Include="Models\blogTag.cs" />
+    <Compile Include="Models\blogTopic.cs" />
+    <Compile Include="Models\user.cs" />
     <Compile Include="Models\Partials\engineer.cs" />
     <Compile Include="Models\setting.cs" />
     <Compile Include="Models\userActionLog.cs" />

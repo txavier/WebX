@@ -14,9 +14,9 @@ namespace WebX.Core.Services
     {
         private IEfQueryContractTotalsPerSection _efQueryContractTotalsPerSection;
 
-        private IService<engineer> _engineerService;
+        private IService<user> _engineerService;
 
-        public MetricService(IEfQueryContractTotalsPerSection efQueryContractTotalsPerSection, IService<engineer> engineerService)
+        public MetricService(IEfQueryContractTotalsPerSection efQueryContractTotalsPerSection, IService<user> engineerService)
         {
             _efQueryContractTotalsPerSection = efQueryContractTotalsPerSection;
 

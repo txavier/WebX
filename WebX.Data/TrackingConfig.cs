@@ -16,7 +16,7 @@ namespace WebX.Data
         {
             //TrackerEnabledDbContext.Common.Configuration.GlobalTrackingConfig.SetSoftDeletableCriteria<ISoftDeletable>(entity => entity.IsDeleted);
 
-            modelBuilder.Entity<engineer>().TrackAllProperties();
+            modelBuilder.Entity<user>().TrackAllProperties();
 
             modelBuilder.Entity<setting>().TrackAllProperties();
 

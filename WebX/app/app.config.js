@@ -17,19 +17,9 @@
                 controller: 'DashboardController',
                 controllerAs: 'vm'
             })
-            .when('/update-action-figure/:actionFigureId', {
-                templateUrl: 'app/action-figures/update-action-figure.html',
-                controller: 'UpdateActionFigureController',
-                controllerAs: 'vm'
-            })
-            .when('/view-action-figure/:actionFigureId', {
-                templateUrl: 'app/action-figures/view-action-figure.html',
-                controller: 'ViewActionFigureController',
-                controllerAs: 'vm'
-            })
-            .when('/add-action-figure', {
-                templateUrl: 'app/action-figures/add-action-figure.html',
-                controller: 'AddActionFigureController',
+            .when('/blog-entries', {
+                templateUrl: 'app/blog-entry/blog-entries.html',
+                controller: 'BlogEntriesController',
                 controllerAs: 'vm'
             })
             .when('/home', {

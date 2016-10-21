@@ -19,7 +19,7 @@ namespace WebX.Infrastructure.Data
 
         public IEnumerable<GraphViewModel> QueryContractTotalsPerSection()
         {
-            var result = _dbContext.engineers
+            var result = _dbContext.users
                 .Select(i => new GraphViewModel
                 {
                     label = i.name,

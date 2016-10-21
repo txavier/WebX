@@ -6,18 +6,18 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("engineer")]
-    public partial class engineer
+    [Table("user")]
+    public partial class user
     {
         internal bool? adminRole;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public engineer()
+        public user()
         {
             //workOrders = new HashSet<workOrder>();
         }
 
-        public int engineerId { get; set; }
+        public int userId { get; set; }
 
         [Required]
         [StringLength(255)]

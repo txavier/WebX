@@ -85,6 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EfDataDbContext.cs" />
+    <Compile Include="Migrations\201610210353571_initialMigration.cs" />
+    <Compile Include="Migrations\201610210353571_initialMigration.Designer.cs">
+      <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TrackingConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +102,11 @@
       <Project>{3b826046-ac3c-4f1f-9a74-7a7cf8c47a19}</Project>
       <Name>ContractTrackingManagement.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610210353571_initialMigration.resx">
+      <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
