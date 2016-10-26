@@ -35,9 +35,13 @@ namespace WebX
             // New code:
             ODataModelBuilder builder = new ODataConventionModelBuilder();
 
-            //builder.EntitySet<actionFigure>("actionFigures");
-            //builder.EntityType<actionFigure>().Filter("imageUrl");
-            //builder.EntityType<actionFigure>().Filter("name");
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+
+            builder.EntitySet<blogEntry>("blogEntries");
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+                .AddProperty((typeof(blogEntry)).GetProperty("blogBodySummaryHtml"));
+
+            builder.EntitySet<author>("authors");
 
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",

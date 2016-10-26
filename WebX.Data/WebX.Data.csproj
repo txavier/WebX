@@ -89,6 +89,18 @@
     <Compile Include="Migrations\201610210353571_initialMigration.Designer.cs">
       <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610222020406_AddBlogModels.cs" />
+    <Compile Include="Migrations\201610222020406_AddBlogModels.Designer.cs">
+      <DependentUpon>201610222020406_AddBlogModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610230427274_ChangedTableNames.cs" />
+    <Compile Include="Migrations\201610230427274_ChangedTableNames.Designer.cs">
+      <DependentUpon>201610230427274_ChangedTableNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.cs" />
+    <Compile Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.Designer.cs">
+      <DependentUpon>201610251856245_RemoveSummaryFromBlogEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TrackingConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +118,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610210353571_initialMigration.resx">
       <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610222020406_AddBlogModels.resx">
+      <DependentUpon>201610222020406_AddBlogModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610230427274_ChangedTableNames.resx">
+      <DependentUpon>201610230427274_ChangedTableNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.resx">
+      <DependentUpon>201610251856245_RemoveSummaryFromBlogEntry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

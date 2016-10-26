@@ -52,7 +52,10 @@ namespace WebX
                       "~/app/action-figures/view-action-figure.controller.js",
                       "~/app/user/dashboard.controller.js",
                       "~/app/home/home.controller.js",
-                      "~/app/login/login.controller.js"
+                      "~/app/login/login.controller.js",
+                      "~/app/blog-entry/blog-entries.controller.js",
+                      "~/app/blog-entry/view-blog-entry.controller.js",
+                      "~/app/blog-entry/add-blog-entry.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

@@ -12,24 +12,24 @@ using System.Web.OData;
 
 namespace WebX.Controllers
 {
-    public class ODataApiController<TEntity> : ODataController
+    public class ODataApiController1<TEntity> : ODataController
         where TEntity : class
     {
         private IService<TEntity> _service;
 
         private ILogService<TEntity> _logService;
 
-        public ODataApiController(IService<TEntity> service)
+        public ODataApiController1(IService<TEntity> service)
         {
             _service = service;
         }
 
-        public ODataApiController(IService<TEntity> service, ApplicationUserManager userManager)
+        public ODataApiController1(IService<TEntity> service, ApplicationUserManager userManager)
         {
             _service = service;
         }
 
-        public ODataApiController(IService<TEntity> service, ApplicationUserManager userManager, ILogService<TEntity> logService = null)
+        public ODataApiController1(IService<TEntity> service, ApplicationUserManager userManager, ILogService<TEntity> logService = null)
         {
             _service = service;
 
@@ -68,7 +68,7 @@ namespace WebX.Controllers
                 return BadRequest(ModelState);
             }
 
-            var result = await _service.AddAsync(entity, User.Identity.Name.Split("\\".ToCharArray()).FirstOrDefault());
+            var result = await _service.AddAsync(entity, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
 
             return Created(result);
         }
@@ -92,7 +92,7 @@ namespace WebX.Controllers
 
             try
             {
-                await _service.UpdateAsync(entityFromDatabase, User.Identity.Name.Split("\\".ToCharArray()).FirstOrDefault());
+                await _service.UpdateAsync(entityFromDatabase, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -124,7 +124,7 @@ namespace WebX.Controllers
 
             try
             {
-                await _service.UpdateAsync(update, User.Identity.Name.Split("\\".ToCharArray()).FirstOrDefault());
+                await _service.UpdateAsync(update, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -156,7 +156,7 @@ namespace WebX.Controllers
                 return NotFound();
             }
 
-            await _service.DeleteAsync(key, User.Identity.Name.Split("\\".ToCharArray()).FirstOrDefault());
+            await _service.DeleteAsync(key, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
 
             return StatusCode(HttpStatusCode.NoContent);
         }

@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WebX.Core.Models
 {
-    partial class blogEntry
+    [Table("blogEntry")]
+    public partial class blogEntry
     {
-        //public string monthAbbreviation { get; set; }
+        public blogEntry()
+        {
+            blogTags = new HashSet<blogTag>();
 
-        //public int day { get; set; }
+            blogTopics = new HashSet<blogCategory>();
+        }
 
-        //public int year { get; set; }
+        [NotMapped]
+        public string monthAbbreviation { get; set; }
+
+        [NotMapped]
+        public int day { get; set; }
+
+        [NotMapped]
+        public int year { get; set; }
 
         public int blogEntryId { get; set; }
 
@@ -22,17 +34,26 @@ namespace WebX.Core.Models
 
         public author author { get; set; }
 
-        public IEnumerable<blogTag> blogTags { get; set; }
+        public virtual ICollection<blogTag> blogTags { get; set; }
 
-        public IEnumerable<blogCategory> blogTopics { get; set; }
+        public virtual ICollection<blogCategory> blogTopics { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime publishedDate { get; set; }
 
         public string imageBase64String { get; set; }
 
         public string blogBodyHtml { get; set; }
 
-        public string blogBodySummaryHtml { get; set; }
+        [NotMapped]
+        public string blogBodySummaryHtml { get { return GetBodySummaryHtml(); } }
 
+        private string GetBodySummaryHtml()
+        {
+            var result = blogBodyHtml.Length > 839 ? blogBodyHtml.Substring(0, (int)Math.Round((double)blogBodyHtml.Length / 4)) + "..." :
+                blogBodyHtml;           
+
+            return result;
+        }
     }
 }

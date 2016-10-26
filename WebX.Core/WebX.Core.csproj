@@ -121,7 +121,7 @@
     <Compile Include="Models\author.cs" />
     <Compile Include="Models\blogEntry.cs" />
     <Compile Include="Models\blogTag.cs" />
-    <Compile Include="Models\blogTopic.cs" />
+    <Compile Include="Models\blogCategory.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\Partials\engineer.cs" />
     <Compile Include="Models\setting.cs" />
@@ -158,11 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Documents\products%252FWB0KSK5R9.zip" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Documents\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

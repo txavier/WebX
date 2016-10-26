@@ -10,6 +10,8 @@
     function dataService($http, $log, $q, toaster, errorService) {
         var apiUrl = '../api/';
 
+        var odataUrl = 'odata/';
+
         var service = {
             addEntity: addEntity,
             updateEntity: updateEntity,
@@ -192,8 +194,9 @@
             }
         }
 
+        // OData
         function getLoggedInUser() {
-            return $http.get('api/users/getLoggedInUser', { cache: true })
+            return $http.get('odata/users/usersService.GetLoggedInUser', { cache: true })
                         .then(getLoggedInUserCompleted)
                         .catch(getLoggedInUserFailed);
 
@@ -226,14 +229,14 @@
             }
         }
 
-        function getEntity(entityDataStore, id, includeProperties) {
-            if (includeProperties) {
-                return $http.get(apiUrl + entityDataStore, { params: { id: id, expand: includeProperties }, })
-                            .then(getComplete)
-                            .catch(getFailed);
+        // OData
+        function getEntity(entityDataStore, id, expand) {
+            if (expand) {
+                return $http.get(odataUrl + entityDataStore + (id ? '(' + id + ')' : '') + '?$expand=' + expand)
+                            .then(getComplete, getFailed);
             }
             else {
-                return $http.get(apiUrl + entityDataStore + (id ? '/' + id : ''))
+                return $http.get(odataUrl + entityDataStore + (id ? '(' + id + ')' : ''))
                                        .then(getComplete)
                                        .catch(getFailed);
             }
@@ -242,85 +245,82 @@
             }
 
             function getFailed(error) {
-                $log.error('XHR failed for get ' + entityDataStore + '.'
-                    + (error.data ? error.data.message + ': ' : '') + (error.data ? error.data.message + ': ' + (error.data.messageDetail || error.data.ExceptionMessage || error.data.Message) : ''));
+                errorService.handleError(error, showToaster || true, entityDataStore, failureMessage);
 
-                error = undefined; return error;
+                // If there is a failure method the below line will have it called.
+                // http://stackoverflow.com/questions/28076258/reject-http-promise-on-success
+                return $q.reject(error);
             }
         }
 
-        function getEntities(entityDataStore, includeProperties) {
-            return $http.get(apiUrl + entityDataStore, { params: includeProperties })
-                        .then(getEntitiesComplete)
-                        .catch(getEntitiesFailed);
+        // OData GetEntities.
+        function getEntities(entityDataStore, expand) {
+            return $http.get(odataUrl + entityDataStore, { params: expand })
+                        .then(getEntitiesComplete, getEntitiesFailed);
 
             function getEntitiesComplete(response) {
-                return response.data;
+                return response.data.value;
             }
 
             function getEntitiesFailed(error) {
-                $log.error('XHR failed for get ' + entityDataStore + '.'
-                    + (error.data ? error.data.message + ': ' : '') + (error.data ? error.data.message + ': ' + (error.data.messageDetail || error.data.ExceptionMessage || error.data.Message) : ''));
+                errorService.handleError(error);
 
-                error = undefined; return error;
+                return $q.reject(error);
             }
         }
 
+        // Replace all $values with ''.
+        // OData SearchEntities.
         function searchEntities(entityDataStore, searchCriteria, cache) {
-            return $http.get('odata/actionFigures').then(searchComplete, searchFailed);
-
-            //return $http.get(apiUrl + entityDataStore, {
-            //    params:
-            //            {
-            //                page: searchCriteria.currentPage,
-            //                perPage: searchCriteria.itemsPerPage,
-            //                sort: searchCriteria.orderBy,
-            //                search: searchCriteria.searchText,
-            //                searchFields: searchCriteria.searchTextFields,
-            //                expand: searchCriteria.includeProperties,
-            //                q: searchCriteria.q,
-            //                fields: searchCriteria.fields
-            //            },
-            //    cache: cache == undefined ? false : cache
-            //})
-            //.then(searchComplete)
-            //.catch(searchFailed);
+            return $http.get(odataUrl + entityDataStore, {
+                params:
+                         {
+                             $skip: searchCriteria == undefined || searchCriteria.currentPage == undefined ? null : (searchCriteria.currentPage - 1) * searchCriteria.itemsPerPage,
+                             $top: searchCriteria == undefined ? null : searchCriteria.itemsPerPage,
+                             sort: searchCriteria == undefined ? null : searchCriteria.orderBy,
+                             search: searchCriteria == undefined ? null : searchCriteria.searchText,
+                             searchFields: searchCriteria == undefined ? null : searchCriteria.searchTextFields,
+                             $expand: searchCriteria == undefined ? null : searchCriteria.expand,
+                             $filter: searchCriteria == undefined || searchCriteria.q == undefined ? null : searchCriteria.q.replace('=', ' eq '),
+                             fields: searchCriteria == undefined ? null : searchCriteria.fields
+                         },
+                cache: cache == undefined ? false : cache
+            })
+            .then(searchComplete, searchFailed);
 
             function searchComplete(response) {
-                return response.data;
+                return response.data.value;
             }
 
             function searchFailed(error) {
-                $log.error('XHR failed for search ' + entityDataStore + '.'
-                    + (error.data ? error.data.message + ': ' : '') + (error.data ? error.data.message + ': ' + (error.data.messageDetail || error.data.ExceptionMessage || error.data.Message) : ''));
+                errorService.handleError(error);
 
-                error = undefined; return error;
+                return $q.reject(error);
             }
         }
 
+        // OData
         function searchEntitiesCount(entityDataStore, searchCriteria, cache) {
-            return $http.get(apiUrl + entityDataStore, {
+            return $http.get(odataUrl + entityDataStore, {
                 params:
                         {
-                            count: true,
-                            search: searchCriteria.searchText,
-                            searchFields: searchCriteria.searchTextFields,
-                            q: searchCriteria.q
+                            $count: true,
+                            search: searchCriteria == undefined ? null : searchCriteria.searchText,
+                            searchFields: searchCriteria == undefined ? null : searchCriteria.searchTextFields,
+                            q: searchCriteria == undefined ? null : searchCriteria.q
                         },
                 cache: cache == undefined ? false : cache
             })
-            .then(searchCountComplete)
-            .catch(searchCountFailed);
+            .then(searchCountComplete, searchCountFailed);
 
             function searchCountComplete(response) {
-                return response.data;
+                return response.data['@odata.count'];
             }
 
             function searchCountFailed(error) {
-                $log.error('XHR failed for searchCount ' + entityDataStore + '.'
-                    + (error.data ? error.data.message + ': ' : '') + (error.data ? error.data.message + ': ' + (error.data.messageDetail || error.data.ExceptionMessage || error.data.Message) : ''));
+                errorService.handleError(error);
 
-                error = undefined; return error;
+                return $q.reject(error);
             }
         }
 

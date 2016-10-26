@@ -20,6 +20,14 @@ namespace WebX.Data
 
         public virtual DbSet<setting> settings { get; set; }
 
+        public virtual DbSet<author> authors { get; set; }
+
+        public virtual DbSet<blogEntry> blogEntries { get; set; }
+
+        public virtual DbSet<blogTag> blogTags { get; set; }
+
+        public virtual DbSet<blogCategory> blogCategories { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -3,40 +3,38 @@
 
     angular
         .module('app')
-        .controller('ViewActionFigureController', ViewActionFigureController);
+        .controller('ViewBlogEntryController', ViewBlogEntryController);
 
-    ViewActionFigureController.$inject = ['$scope', '$routeParams', 'dataService'];
+    ViewBlogEntryController.$inject = ['$scope', '$routeParams', 'dataService'];
 
-    function ViewActionFigureController($scope, $routeParams, dataService) {
+    function ViewBlogEntryController($scope, $routeParams, dataService) {
         var vm = this;
 
-        vm.defaultImageUrl = '../s.discogs.com/images/default-release-cd.png';
-        vm.actionFigure = {};
+        vm.entitiesName = 'blogEntries';
+        vm.blogEntries = [];
 
         activate();
 
         function activate() {
-            vm.actionFigureId = $routeParams.actionFigureId;
-
-            var actionFigureSearchCriteria = {
+            var blogEntriesSearchCriteria = {
                 page: 1,
                 perPage: 30,
                 sort: null,
                 search: null,
                 searchFields: null,
                 expand: null,
-                q: 'actionFigureId == ' + vm.actionFigureId,
+                q: 'blogEntryId eq ' + $routeParams.blogEntryId,
                 fields: null
             };
 
-            getActionFigures(actionFigureSearchCriteria);
+            getBlogEntries(blogEntriesSearchCriteria);
         }
 
-        function getActionFigures(searchCriteria) {
-            return dataService.searchEntities('actionFigures', searchCriteria).then(function (data) {
-                vm.actionFigures = data;
+        function getBlogEntries(searchCriteria) {
+            return dataService.searchEntities(vm.entitiesName, searchCriteria).then(function (data) {
+                vm.blogEntries = data.value;
 
-                return vm.actionFigures;
+                return vm.blogEntries;
             });
         }
 
