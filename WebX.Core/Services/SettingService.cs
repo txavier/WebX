@@ -23,7 +23,7 @@ namespace WebX.Core.Services
 
         public setting GetSettingBySettingKey(string settingKey)
         {
-            var result = Get(filter: i => i.settingKey == settingKey).SingleOrDefault();
+            var result = base.Get(filter: i => i.settingKey == settingKey).SingleOrDefault();
 
             return result;
         }

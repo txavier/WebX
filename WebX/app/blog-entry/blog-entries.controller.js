@@ -10,7 +10,7 @@
     function BlogEntriesController($scope, $routeParams, $sce, dataService) {
         var vm = this;
 
-        vm.entitiesName = 'blogEntries';
+        vm.entityDataStore = 'blogEntries';
         vm.blogEntries = [];
 
         activate();
@@ -31,7 +31,7 @@
         }
 
         function getBlogEntries(searchCriteria) {
-            return dataService.searchEntities(vm.entitiesName, searchCriteria).then(function (data) {
+            return dataService.searchEntities(vm.entityDataStore, searchCriteria).then(function (data) {
                 vm.blogEntries = data;
 
                 for(var i = 0; i < vm.blogEntries.length; i++) {

@@ -38,7 +38,12 @@ namespace WebX
             bundles.Add(new ScriptBundle("~/bundles/angular-third-party").Include(
                       "~/wwwroot/lib/angular-loading-bar/build/loading-bar.min.js",
                       "~/wwwroot/lib/angular-sessionstorage/angular-sessionstorage.js",
-                      "~/wwwroot/lib/AngularJS-Toaster/toaster.min.js"));
+                      "~/wwwroot/lib/AngularJS-Toaster/toaster.min.js",
+                      "~/wwwroot/lib/textAngular/dist/textAngular-rangy.min.js",
+                      "~/wwwroot/lib/textAngular/dist/textAngular-sanitize.min.js",
+                      "~/wwwroot/lib/textAngular/dist/textAngular.min.js",
+                      "~/wwwroot/lib/ng-file-model/ng-file-model.js"
+                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-app").Include(
                       "~/app/app.module.js",
@@ -55,7 +60,8 @@ namespace WebX
                       "~/app/login/login.controller.js",
                       "~/app/blog-entry/blog-entries.controller.js",
                       "~/app/blog-entry/view-blog-entry.controller.js",
-                      "~/app/blog-entry/add-blog-entry.controller.js"
+                      "~/app/blog-entry/add-blog-entry.controller.js",
+                      "~/app/blog-entry/update-blog-entry.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -68,10 +74,11 @@ namespace WebX
                 "~/wwwroot/lib/respond/dest/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                 "~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-                 "~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
-                 "~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
-                 "~/Content/Site.css"));
+                "~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+                "~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
+                "~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
+                "~/Content/Site.css",
+                "~/wwwroot/lib/textAngular/dist/textAngular.css"));
         }
     }
 }

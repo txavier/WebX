@@ -5,12 +5,12 @@
         .module('app')
         .controller('ViewBlogEntryController', ViewBlogEntryController);
 
-    ViewBlogEntryController.$inject = ['$scope', '$routeParams', 'dataService'];
+    ViewBlogEntryController.$inject = ['$scope', '$routeParams', '$sce', 'dataService'];
 
-    function ViewBlogEntryController($scope, $routeParams, dataService) {
+    function ViewBlogEntryController($scope, $routeParams, $sce, dataService) {
         var vm = this;
 
-        vm.entitiesName = 'blogEntries';
+        vm.entityDataStore = 'blogEntries';
         vm.blogEntries = [];
 
         activate();
@@ -22,7 +22,7 @@
                 sort: null,
                 search: null,
                 searchFields: null,
-                expand: null,
+                expand: 'author',
                 q: 'blogEntryId eq ' + $routeParams.blogEntryId,
                 fields: null
             };
@@ -31,8 +31,10 @@
         }
 
         function getBlogEntries(searchCriteria) {
-            return dataService.searchEntities(vm.entitiesName, searchCriteria).then(function (data) {
-                vm.blogEntries = data.value;
+            return dataService.searchEntities(vm.entityDataStore, searchCriteria).then(function (data) {
+                vm.blogEntry = data[0];
+
+                vm.blogEntry.safeBlogBodyHtml = $sce.trustAsHtml(vm.blogEntry.blogBodyHtml);
 
                 return vm.blogEntries;
             });

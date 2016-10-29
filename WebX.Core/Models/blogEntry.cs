@@ -46,7 +46,16 @@ namespace WebX.Core.Models
         public string blogBodyHtml { get; set; }
 
         [NotMapped]
-        public string blogBodySummaryHtml { get { return GetBodySummaryHtml(); } }
+        public string blogBodySummaryHtml
+        {
+            get
+            {
+                return GetBodySummaryHtml();
+            }
+            set
+            {
+            }
+        }
 
         private string GetBodySummaryHtml()
         {

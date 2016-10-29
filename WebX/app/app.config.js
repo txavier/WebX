@@ -17,6 +17,16 @@
                 controller: 'DashboardController',
                 controllerAs: 'vm'
             })
+            .when('/update-blog-entry/:blogEntryId', {
+                templateUrl: 'app/blog-entry/update-blog-entry.html',
+                controller: 'UpdateBlogEntryController',
+                controllerAs: 'vm'
+            })
+            .when('/add-blog-entry', {
+                templateUrl: 'app/blog-entry/add-blog-entry.html',
+                controller: 'AddBlogEntryController',
+                controllerAs: 'vm'
+            })
             .when('/view-blog-entry/:blogEntryId', {
                 templateUrl: 'app/blog-entry/view-blog-entry.html',
                 controller: 'ViewBlogEntryController',

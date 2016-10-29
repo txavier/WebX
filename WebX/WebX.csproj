@@ -317,6 +317,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\blog-entry\update-blog-entry.html" />
+    <Content Include="app\blog-entry\update-blog-entry.controller.js" />
     <Content Include="app\blog-entry\blog-entries.controller.js" />
     <Content Include="app\blog-entry\blog-entries.html" />
     <Content Include="app\blog-entry\view-blog-entry.html" />
@@ -1267,6 +1269,14 @@
     <Content Include="wwwroot\lib\modernizr\test\node\lib\options.js" />
     <Content Include="wwwroot\lib\modernizr\test\universal\lib\build-query.js" />
     <Content Include="wwwroot\lib\modernizr\test\universal\lib\generate-banner.js" />
+    <Content Include="wwwroot\lib\ng-file-model\ng-file-model.js" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\index.html" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\angular-csp.css" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\angular.js" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\angular.min.js" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\index.js" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\ng-file-model\ng-file-model.js" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\ng-file-model\sample\index.html" />
     <Content Include="wwwroot\lib\respond\cross-domain\example.html" />
     <Content Include="wwwroot\lib\respond\cross-domain\respond-proxy.html" />
     <Content Include="wwwroot\lib\respond\cross-domain\respond.proxy.gif" />
@@ -1279,6 +1289,25 @@
     <Content Include="wwwroot\lib\respond\src\matchmedia.addListener.js" />
     <Content Include="wwwroot\lib\respond\src\matchmedia.polyfill.js" />
     <Content Include="wwwroot\lib\respond\src\respond.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular-rangy.min.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular-sanitize.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular-sanitize.min.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular.css" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular.min.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngular.umd.js" />
+    <Content Include="wwwroot\lib\textAngular\dist\textAngularSetup.js" />
+    <Content Include="wwwroot\lib\textAngular\karma-jqlite.conf.js" />
+    <Content Include="wwwroot\lib\textAngular\karma-jquery.conf.js" />
+    <Content Include="wwwroot\lib\textAngular\src\DOM.js" />
+    <Content Include="wwwroot\lib\textAngular\src\factories.js" />
+    <Content Include="wwwroot\lib\textAngular\src\globals.js" />
+    <Content Include="wwwroot\lib\textAngular\src\main.js" />
+    <Content Include="wwwroot\lib\textAngular\src\taBind.js" />
+    <Content Include="wwwroot\lib\textAngular\src\textAngular-sanitize.js" />
+    <Content Include="wwwroot\lib\textAngular\src\textAngular.css" />
+    <Content Include="wwwroot\lib\textAngular\src\textAngularSetup.js" />
+    <Content Include="wwwroot\lib\textAngular\src\validators.js" />
     <None Include="Properties\PublishProfiles\deltanovember.xaviersoftware.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1519,6 +1548,24 @@
     <Content Include="wwwroot\lib\respond\LICENSE-MIT" />
     <Content Include="wwwroot\lib\respond\package.json" />
     <Content Include="wwwroot\lib\respond\README.md" />
+    <Content Include="wwwroot\lib\textAngular\.bower.json" />
+    <Content Include="wwwroot\lib\textAngular\bower.json" />
+    <Content Include="wwwroot\lib\textAngular\changelog.md" />
+    <Content Include="wwwroot\lib\textAngular\CONTRIBUTING.md" />
+    <Content Include="wwwroot\lib\textAngular\README.md" />
+    <Content Include="wwwroot\lib\ng-file-model\.bower.json" />
+    <Content Include="wwwroot\lib\ng-file-model\bower.json" />
+    <Content Include="wwwroot\lib\ng-file-model\LICENSE" />
+    <Content Include="wwwroot\lib\ng-file-model\package.json" />
+    <Content Include="wwwroot\lib\ng-file-model\README.md" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\angular.min.js.gzip" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\angular.min.js.map" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\bower.json" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\package.json" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\angular\README.md" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\ng-file-model\bower.json" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\ng-file-model\LICENSE" />
+    <Content Include="wwwroot\lib\ng-file-model\sample\lib\ng-file-model\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

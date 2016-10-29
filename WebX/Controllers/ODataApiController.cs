@@ -60,8 +60,8 @@ namespace WebX.Controllers
             return result;
         }
 
-        [System.Web.Http.HttpPost]
-        public virtual async Task<IHttpActionResult> Post(TEntity entity)
+        [HttpPost]
+        public virtual async Task<IHttpActionResult> Post([FromBody]TEntity entity)
         {
             if (!ModelState.IsValid)
             {
@@ -110,21 +110,21 @@ namespace WebX.Controllers
         }
 
         [HttpPut]
-        public virtual async Task<IHttpActionResult> Put([FromODataUri] int key, TEntity update)
+        public virtual async Task<IHttpActionResult> Put([FromODataUri] int key, TEntity entity)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (key != (int)_service.GetEntityIdObject(update))
+            if (key != (int)_service.GetEntityIdObject(entity))
             {
                 return BadRequest();
             }
 
             try
             {
-                await _service.UpdateAsync(update, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
+                await _service.UpdateAsync(entity, User.Identity.Name?.Split("\\".ToCharArray()).FirstOrDefault());
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -137,7 +137,7 @@ namespace WebX.Controllers
                     throw;
                 }
             }
-            return Updated(update);
+            return Updated(entity);
         }
 
         private bool EntityExists(int key)
