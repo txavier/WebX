@@ -28,7 +28,9 @@
         });
 
         function addEntity(entity) {
-            //entity.blogBodySummaryHtml = undefined;
+            entity.authorId = 1;
+
+            entity.fileModel = undefined;
 
             return dataService.addEntity(vm.entityDataStore, entity).then(function (data) {
                 toaster.pop('success', 'Save successful.');

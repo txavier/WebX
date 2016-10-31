@@ -61,7 +61,11 @@ namespace WebX
                       "~/app/blog-entry/blog-entries.controller.js",
                       "~/app/blog-entry/view-blog-entry.controller.js",
                       "~/app/blog-entry/add-blog-entry.controller.js",
-                      "~/app/blog-entry/update-blog-entry.controller.js"
+                      "~/app/blog-entry/update-blog-entry.controller.js",
+                      "~/app/author/authors.controller.js",
+                      "~/app/author/view-author.controller.js",
+                      "~/app/author/add-author.controller.js",
+                      "~/app/author/update-author.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

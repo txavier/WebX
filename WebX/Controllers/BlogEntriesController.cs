@@ -8,7 +8,7 @@ using WebX.Core.Models;
 
 namespace WebX.Controllers
 {
-    public class BlogEntriesController : ODataApiController1<blogEntry>
+    public class BlogEntriesController : ODataApiController<blogEntry>
     {
         public BlogEntriesController(IService<blogEntry> blogEntryService)
             : base(blogEntryService)

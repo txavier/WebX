@@ -9,7 +9,7 @@ namespace WebX.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WebX.Data.EfDataDbContext context)

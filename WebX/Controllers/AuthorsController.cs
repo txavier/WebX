@@ -8,7 +8,7 @@ using WebX.Core.Models;
 
 namespace WebX.Controllers
 {
-    public class AuthorsController : ODataApiController1<author>
+    public class AuthorsController : ODataApiController<author>
     {
         public AuthorsController(IService<author> authorService)
             : base(authorService)

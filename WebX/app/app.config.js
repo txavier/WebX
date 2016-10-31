@@ -12,6 +12,26 @@
         $httpProvider.interceptors.push('authInterceptorService');
 
         $routeProvider
+            .when('/update-author/:authorId', {
+                templateUrl: 'app/author/update-author.html',
+                controller: 'UpdateAuthorController',
+                controllerAs: 'vm'
+            })
+            .when('/add-author', {
+                templateUrl: 'app/author/add-author.html',
+                controller: 'AddAuthorController',
+                controllerAs: 'vm'
+            })
+            .when('/view-author/:authorId', {
+                templateUrl: 'app/author/view-author.html',
+                controller: 'ViewAuthorController',
+                controllerAs: 'vm'
+            })
+            .when('/authors', {
+                templateUrl: 'app/author/authors.html',
+                controller: 'AuthorsController',
+                controllerAs: 'vm'
+            })
             .when('/dashboard', {
                 templateUrl: 'app/user/dashboard.html',
                 controller: 'DashboardController',
