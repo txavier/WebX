@@ -1,0 +1,232 @@
+﻿<!-- BREADCRUMBS -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title pull-left">BLOG</h1>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Blogs</a></li>
+            <!--<li class="active">Blog Full Thumbnail</li>-->
+        </ol>
+    </div>
+</div>
+<!-- END BREADCRUMBS -->
+<!-- PAGE CONTENT -->
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- BLOG ENTRIES -->
+                <div class="blog full-thumbnail margin-bottom-30px">
+                    <div data-ng-repeat="blogEntry in vm.blogEntries">
+                        <!-- blog post -->
+                        <article class="entry-post">
+                            <header class="entry-header">
+                                <h2 class="entry-title">
+                                    <a href="blog-single.html">{{ blogEntry.title }}</a>
+                                </h2>
+                                <div class="meta-line clearfix">
+                                    <div class="meta-author-category pull-left">
+                                        <span class="post-author">by <a href="#">{{ blogEntry.author.authorFirstName + ' ' + vm.blogEntry.author.authorLastname }}</a></span>
+                                        <span class="post-category">In: <a data-ng-repeat="blogCategory in blogEntry.blogCategories" href="#">{{ blogCategory.name }}</a></span>
+                                    </div>
+                                    <div class="meta-tag-comment pull-right">
+                                        <span class="post-tags"><i class="fa fa-tag"></i> <a datang-repeat="blogTag in blogEntry.blogTags" href="#">{{ blogTag.name }}</a></span>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="entry-content clearfix">
+                                <figure class="featured-image">
+                                    <a href="blog-single.html">
+                                        <div class="post-date-info clearfix"><span class="post-month">{{ blogEntry.monthAbbreviation }}</span><span class="post-date">{{ blogEntry.day }}</span><span class="post-year">{{ blogEntry.year }}</span></div>
+                                        <img data-ng-src="{{ blogEntry.imageBase64String }}" class="img-responsive" alt="featured-image" />
+                                    </a>
+                                </figure>
+                                <div class="excerpt">
+                                    <div ng-bind-html="blogEntry.safeBlogBodySummaryHtml"></div>
+                                    <p class="read-more">
+                                        <a href="#/view-blog-entry/{{ blogEntry.blogEntryId }}" class="btn btn-primary">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- end blog post -->
+                        <hr />
+                    </div>
+                </div>
+                <!-- END BLOG ENTRIES -->
+            </div>
+            <div class="col-md-3">
+                <!-- SIDEBAR -->
+                <!-- search form -->
+                <div class="widget">
+                    <form action="#" class="form-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="enter search term">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">Search</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <!-- end search form -->
+                <!-- categories -->
+                <div class="widget">
+                    <h4 class="widget-title">CATEGORIES</h4>
+                    <ul class="list-unstyled category-list">
+                        <li><a href="#">Business (23)</a></li>
+                        <li>
+                            <a href="#">Creative (14)</a>
+                            <ul class="sub-category-list">
+                                <li><a href="#">Digital Imaging (8)</a></li>
+                                <li><a href="#">Web Design (6)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Media (65)</a></li>
+                        <li><a href="#">Photography (17)</a></li>
+                        <li><a href="#">Corporate (9)</a></li>
+                    </ul>
+                </div>
+                <!-- end categories -->
+                <!-- tabbed content -->
+                <div class="widget">
+                    <div class="tabpanel">
+                        <!-- nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#content-popular" aria-controls="content-popular" role="tab" data-toggle="tab">POPULAR</a></li>
+                            <li role="presentation"><a href="#content-recents" aria-controls="content-recents" role="tab" data-toggle="tab">RECENTS</a></li>
+                            <li role="presentation"><a href="#content-recent-comments" aria-controls="content-recent-comments" role="tab" data-toggle="tab"><i class="fa fa-comments"></i></a></li>
+                        </ul>
+                        <!-- end nav tabs -->
+                        <!-- tab panes -->
+                        <div class="tab-content">
+                            <div id="content-popular" class="tab-pane fade in active" role="tabpanel">
+                                <ul class="list-unstyled blogposts popular">
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Monotonectally Underwhelm Sustainable Outsourcing</a></h4>
+                                        <span class="text-muted">Nov 4, 2014 | by John Doe</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Seamlessly Repurpose Equity Invested Intellectual Capital</a></h4>
+                                        <span class="text-muted">Nov 23, 2014 | by George</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Efficiently Aggregate Multidisciplinary Markets With Professional Functionalities</a></h4>
+                                        <span class="text-muted">Nov 9, 2014 | by Jane</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Collaboratively Actualize Revolutionary Total Linkage</a></h4>
+                                        <span class="text-muted">Nov 9, 2014 | by Smith</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Credibly Disintermediate Client-centered Applications</a></h4>
+                                        <span class="text-muted">Nov 9, 2014 | by Barbara</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="content-recents" class="tab-pane fade" role="tabpanel">
+                                <ul class="list-unstyled blogposts latest">
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Assertively Streamline Error-free Quality</a></h4>
+                                        <span class="text-muted">Dec 9, 2014 | by John Doe</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Proactively Monetize Long-term High-impact Architectures After Value-added Experiences</a></h4>
+                                        <span class="text-muted">Dec 12, 2014 | by George</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Efficiently Repurpose Enterprise-wide Processes For Granular Applications</a></h4>
+                                        <span class="text-muted">Dec 29, 2014 | by Jane</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Monotonectally Underwhelm Sustainable Outsourcing</a></h4>
+                                        <span class="text-muted">Nov 4, 2014 | by John Doe</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="post-title"><a href="#">Seamlessly Repurpose Equity Invested Intellectual Capital</a></h4>
+                                        <span class="text-muted">Nov 23, 2014 | by George</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="content-recent-comments" class="tab-pane fade" role="tabpanel">
+                                <ul class="list-unstyled recent-comments">
+                                    <li>
+                                        <div class="media">
+                                            <a href="#" class="media-left"><img src="assets/img/user1.png" class="img-circle" alt="Avatar"></a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Antonio</a> in <a href="#">Holisticly Unleash Enabled Information Via Customized Value</a></h4>
+                                                <p class="text-muted">Interactively grow cross-media customer service through B2C paradigms. Continually monetize magnetic sources rather than ...</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <a href="#" class="media-left"><img src="assets/img/user2.png" class="img-circle" alt="Avatar"></a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Michael</a> in <a href="#">Holisticly Unleash Enabled Information Via Customized Value</a></h4>
+                                                <p class="text-muted">Objectively disseminate customer directed e-commerce with prospective partnerships. Collaboratively actualize ...</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <a href="#" class="media-left"><img src="assets/img/user3.png" class="img-circle" alt="Avatar"></a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Laura</a> in <a href="#">Holisticly Unleash Enabled Information Via Customized Value</a></h4>
+                                                <p class="text-muted">Continually monetize magnetic sources rather than leveraged outsourcing ...</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <a href="#" class="media-left"><img src="assets/img/user4.png" class="img-circle" alt="Avatar"></a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Diana</a> in <a href="#">Holisticly Unleash Enabled Information Via Customized Value</a></h4>
+                                                <p class="text-muted">Objectively disseminate customer directed e-commerce with prospective partnerships. Collaboratively actualize ...</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <a href="#" class="media-left"><img src="assets/img/user5.png" class="img-circle" alt="Avatar"></a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#">Henry</a> in <a href="#">Holisticly Unleash Enabled Information Via Customized Value</a></h4>
+                                                <p class="text-muted">Proactively reinvent team building customer service with ethical e-markets. Professionally utilize mission-critical ...</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end tab panes -->
+                    </div>
+                </div>
+                <!-- end tabbed content -->
+                <!-- tags -->
+                <div class="widget">
+                    <h4 class="widget-title">TAGS</h4>
+                    <ul class="list-inline tag-list">
+                        <li><a href="#">story</a></li>
+                        <li><a href="#">inspiration</a></li>
+                        <li><a href="#">creative</a></li>
+                        <li><a href="#">e-commerce</a></li>
+                        <li><a href="#">statistic data</a></li>
+                        <li><a href="#">business</a></li>
+                        <li><a href="#">development</a></li>
+                        <li><a href="#">startup ideas</a></li>
+                        <li><a href="#">enterprise</a></li>
+                    </ul>
+                </div>
+                <!-- end tags -->
+                <!-- text widget -->
+                <div class="widget">
+                    <h4 class="widget-title">TEXT WIDGET</h4>
+                    <p>Conveniently develop parallel technologies via user-centric benefits. Globally deploy turnkey technologies vis-a-vis excellent partnerships. Completely aggregate one-to-one human capital with principle-centered initiatives. Seamlessly enable web-enabled.</p>
+                    <p> Appropriately foster ethical architectures via functional alignments. Holisticly unleash enabled information via customized value. Collaboratively syndicate corporate benefits without process-centric communities.</p>
+                </div>
+                <!-- end text widget -->
+                <!-- END SIDEBAR -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->

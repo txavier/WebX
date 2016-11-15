@@ -11,16 +11,16 @@ namespace WebX.Controllers
     {
         public ActionResult Index()
         {
-            var root = VirtualPathUtility.ToAbsolute("~/");
+            //var root = VirtualPathUtility.ToAbsolute("~/");
 
-            if ((root != Request.ApplicationPath) && (Request.ApplicationPath == Request.Path))
-            {
-                return Redirect(root + "#");
-            }
-            else
-            {
+            //if ((root != Request.ApplicationPath) && (Request.ApplicationPath == Request.Path))
+            //{
+            //    return Redirect(root + "#");
+            //}
+            //else
+            //{
                 return View();
-            }
+            //}
 
         }
     }

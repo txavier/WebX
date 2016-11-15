@@ -1,0 +1,20 @@
+{
+  "name": "ASP.NET",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "*",
+    "jquery-validation-unobtrusive": "*",
+    "modernizr": "*",
+    "respond": "*",
+    "angular": "~1.5",
+    "angular-route": "*",
+    "angular-animate": "*",
+    "AngularJS-Toaster": "*",
+    "angular-sessionstorage": "*",
+    "textAngular": "~1.5.12",
+    "ng-file-model": "*"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
+  }
+}

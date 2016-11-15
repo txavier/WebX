@@ -50,6 +50,8 @@
                     // no token - so bounce to Authorize endpoint in AccountController to sign in or register
                     //window.location = "/Account/Authorize?client_id=web&response_type=token&state=" + encodeURIComponent(window.location.hash);
                     //window.location = "/webx" + encodeURIComponent(window.location.hash);
+                    //window.location = "Account/Authorize?client_id=web&response_type=token&state=" + encodeURIComponent(window.location.hash);
+                    window.location = "Account/Authorize?client_id=web&response_type=token&state=/blah/";
                 }
             }
 

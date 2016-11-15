@@ -160,11 +160,11 @@
   <ItemGroup>
     <ProjectReference Include="..\WebX.Core\WebX.Core.csproj">
       <Project>{3b826046-ac3c-4f1f-9a74-7a7cf8c47a19}</Project>
-      <Name>ContractTrackingManagement.Core</Name>
+      <Name>WebX.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebX.Data\WebX.Data.csproj">
       <Project>{1ef75c9b-76ab-4f7e-b2f2-2698773dfa72}</Project>
-      <Name>ContractTrackingManagement.Data</Name>
+      <Name>WebX.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

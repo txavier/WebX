@@ -17,7 +17,7 @@
     <AssemblyName>WebX</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
@@ -292,6 +292,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\BlogEntriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1589,11 +1590,11 @@
   <ItemGroup>
     <ProjectReference Include="..\WebX.CompositionRoot\WebX.CompositionRoot.csproj">
       <Project>{797D6C6D-0F6D-4FE6-A407-74E6CC8B967D}</Project>
-      <Name>FoxtrotAlpha.CompositionRoot</Name>
+      <Name>WebX.CompositionRoot</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebX.Core\WebX.Core.csproj">
       <Project>{3B826046-AC3C-4F1F-9A74-7A7CF8C47A19}</Project>
-      <Name>FoxtrotAlpha.Core</Name>
+      <Name>WebX.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -1619,7 +1620,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52616</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WebX</IISUrl>
+          <IISUrl>http://localhost:52616/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
