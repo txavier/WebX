@@ -17,7 +17,7 @@
     <AssemblyName>WebX.site</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
@@ -287,7 +287,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\actionFiguresController.cs" />
+    <Compile Include="Controllers\blogEntriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
@@ -297,9 +297,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609061950480_InitialSecurityMigration.cs" />
-    <Compile Include="Migrations\201609061950480_InitialSecurityMigration.Designer.cs">
-      <DependentUpon>201609061950480_InitialSecurityMigration.cs</DependentUpon>
+    <None Include="Migrations\201609061950480_InitialSecurityMigration.cs_bak" />
+    <Compile Include="Migrations\201611181346287_InitialSecurityMigration.cs" />
+    <Compile Include="Migrations\201611181346287_InitialSecurityMigration.Designer.cs">
+      <DependentUpon>201611181346287_InitialSecurityMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -341,6 +342,157 @@
     <Content Include="app\user\dashboard.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\ie.css" />
+    <Content Include="assets\css\main-one-page.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\my-custom-styles.css" />
+    <Content Include="assets\css\shop-main.css" />
+    <Content Include="assets\css\skins\brown.css" />
+    <Content Include="assets\css\skins\deepskyblue.css" />
+    <Content Include="assets\css\skins\goldenrod.css" />
+    <Content Include="assets\css\skins\indianred.css" />
+    <Content Include="assets\css\skins\lightgreen.css" />
+    <Content Include="assets\css\skins\orange.css" />
+    <Content Include="assets\css\skins\seagreen.css" />
+    <Content Include="assets\css\skins\slategray.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\ico\favicon.png" />
+    <Content Include="assets\ico\repute114x114.png" />
+    <Content Include="assets\ico\repute144x144.png" />
+    <Content Include="assets\ico\repute57x57.png" />
+    <Content Include="assets\ico\repute72x72.png" />
+    <Content Include="assets\img\badge.png" />
+    <Content Include="assets\img\blog\balloon-med.jpg" />
+    <Content Include="assets\img\blog\balloon.jpg" />
+    <Content Include="assets\img\blog\buildings-med.jpg" />
+    <Content Include="assets\img\blog\buildings.jpg" />
+    <Content Include="assets\img\blog\people-med.jpg" />
+    <Content Include="assets\img\blog\people.jpg" />
+    <Content Include="assets\img\business-people.png" />
+    <Content Include="assets\img\bx_loader.gif" />
+    <Content Include="assets\img\clients\logo1.png" />
+    <Content Include="assets\img\clients\logo2.png" />
+    <Content Include="assets\img\clients\logo3.png" />
+    <Content Include="assets\img\clients\logo4.png" />
+    <Content Include="assets\img\clients\logo5.png" />
+    <Content Include="assets\img\flags\China.png" />
+    <Content Include="assets\img\flags\Germany.png" />
+    <Content Include="assets\img\flags\Japan.png" />
+    <Content Include="assets\img\flags\United-Kingdom.png" />
+    <Content Include="assets\img\free.png" />
+    <Content Include="assets\img\fullscreen-bg.jpg" />
+    <Content Include="assets\img\fullscreen-bg2.jpg" />
+    <Content Include="assets\img\gray_jean.png" />
+    <Content Include="assets\img\hero-unit-bg.png" />
+    <Content Include="assets\img\hero-unit-obj.png" />
+    <Content Include="assets\img\hero-unit-obj2.png" />
+    <Content Include="assets\img\hero-unit-obj3.png" />
+    <Content Include="assets\img\intro-img.png" />
+    <Content Include="assets\img\location-pin.png" />
+    <Content Include="assets\img\logo\repute-logo-light-brown.png" />
+    <Content Include="assets\img\logo\repute-logo-light-deepskyblue.png" />
+    <Content Include="assets\img\logo\repute-logo-light-goldenrod.png" />
+    <Content Include="assets\img\logo\repute-logo-light-indianred.png" />
+    <Content Include="assets\img\logo\repute-logo-light-lightgreen.png" />
+    <Content Include="assets\img\logo\repute-logo-light-orange.png" />
+    <Content Include="assets\img\logo\repute-logo-light-seagreen.png" />
+    <Content Include="assets\img\logo\repute-logo-light-slategray.png" />
+    <Content Include="assets\img\logo\repute-logo-light.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-brown.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-deepskyblue.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-goldenrod.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-indianred.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-light.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-lightgreen.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-orange.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-seagreen.png" />
+    <Content Include="assets\img\logo\repute-logo-nav-slategray.png" />
+    <Content Include="assets\img\logo\repute-logo-nav.png" />
+    <Content Include="assets\img\news\featured-news.png" />
+    <Content Include="assets\img\news\news1.png" />
+    <Content Include="assets\img\news\news2.png" />
+    <Content Include="assets\img\news\news3.png" />
+    <Content Include="assets\img\news\news4.png" />
+    <Content Include="assets\img\news\news5.png" />
+    <Content Include="assets\img\page-header-bg.png" />
+    <Content Include="assets\img\pattern-geometry.png" />
+    <Content Include="assets\img\portfolio\800x500\work1.png" />
+    <Content Include="assets\img\portfolio\800x500\work2.png" />
+    <Content Include="assets\img\portfolio\800x500\work3.png" />
+    <Content Include="assets\img\portfolio\800x500\work4.png" />
+    <Content Include="assets\img\portfolio\800x500\work5.png" />
+    <Content Include="assets\img\portfolio\800x500\work6.png" />
+    <Content Include="assets\img\portfolio\800x500\work7.png" />
+    <Content Include="assets\img\portfolio\800x500\work8.png" />
+    <Content Include="assets\img\portfolio\800x800\work1.png" />
+    <Content Include="assets\img\portfolio\800x800\work2.png" />
+    <Content Include="assets\img\portfolio\800x800\work3.png" />
+    <Content Include="assets\img\portfolio\800x800\work4.png" />
+    <Content Include="assets\img\portfolio\800x800\work5.png" />
+    <Content Include="assets\img\portfolio\800x800\work6.png" />
+    <Content Include="assets\img\portfolio\800x800\work7.png" />
+    <Content Include="assets\img\portfolio\800x800\work8.png" />
+    <Content Include="assets\img\portfolio\single\bicycle.jpg" />
+    <Content Include="assets\img\portfolio\single\blurred_lines.jpg" />
+    <Content Include="assets\img\portfolio\single\edge.jpg" />
+    <Content Include="assets\img\sliders\full-slide-color.jpg" />
+    <Content Include="assets\img\sliders\full-slide-color2.jpg" />
+    <Content Include="assets\img\sliders\full-slide-color3.jpg" />
+    <Content Include="assets\img\sliders\full-slide.jpg" />
+    <Content Include="assets\img\sliders\full-slide2.jpg" />
+    <Content Include="assets\img\sliders\full-slide3.jpg" />
+    <Content Include="assets\img\sliders\slider1-h500.png" />
+    <Content Include="assets\img\sliders\slider2-h500.png" />
+    <Content Include="assets\img\sliders\slider3-h500.png" />
+    <Content Include="assets\img\team\person1.png" />
+    <Content Include="assets\img\team\person2.png" />
+    <Content Include="assets\img\team\person3.png" />
+    <Content Include="assets\img\team\person4.png" />
+    <Content Include="assets\img\testimonial-bg.png" />
+    <Content Include="assets\img\user1.png" />
+    <Content Include="assets\img\user2.png" />
+    <Content Include="assets\img\user3.png" />
+    <Content Include="assets\img\user4.png" />
+    <Content Include="assets\img\user5.png" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery-2.1.1.min.js" />
+    <Content Include="assets\js\plugins\autohidingnavbar\jquery.bootstrap-autohidingnavbar.js" />
+    <Content Include="assets\js\plugins\autohidingnavbar\jquery.bootstrap-autohidingnavbar.min.js" />
+    <Content Include="assets\js\plugins\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <Content Include="assets\js\plugins\bootstrap-multiselect\bootstrap-multiselect.js" />
+    <Content Include="assets\js\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="assets\js\plugins\easing\jquery.easing.js" />
+    <Content Include="assets\js\plugins\easing\jquery.easing.min.js" />
+    <Content Include="assets\js\plugins\fitvids\jquery.fitvids.js" />
+    <Content Include="assets\js\plugins\google-map\google-map.js" />
+    <Content Include="assets\js\plugins\isotope\isotope.pkgd.js" />
+    <Content Include="assets\js\plugins\isotope\isotope.pkgd.min.js" />
+    <Content Include="assets\js\plugins\jquery-cycle\jquery.cycle.all.js" />
+    <Content Include="assets\js\plugins\jquery-easypiechart\jquery.easypiechart.js" />
+    <Content Include="assets\js\plugins\jquery-easypiechart\jquery.easypiechart.min.js" />
+    <Content Include="assets\js\plugins\jquery-maskedinput\jquery.masked-input.js" />
+    <Content Include="assets\js\plugins\jquery-maskedinput\jquery.masked-input.min.js" />
+    <Content Include="assets\js\plugins\maximage\jquery.maximage.js" />
+    <Content Include="assets\js\plugins\maximage\jquery.maximage.min.js" />
+    <Content Include="assets\js\plugins\moment\moment.js" />
+    <Content Include="assets\js\plugins\moment\moment.min.js" />
+    <Content Include="assets\js\plugins\parsley-validation\parsley.js" />
+    <Content Include="assets\js\plugins\parsley-validation\parsley.min.js" />
+    <Content Include="assets\js\plugins\scrollto\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="assets\js\plugins\scrollto\jquery.localscroll-1.2.7.js" />
+    <Content Include="assets\js\plugins\scrollto\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="assets\js\plugins\scrollto\jquery.scrollTo-1.4.3.1.js" />
+    <Content Include="assets\js\plugins\slick\slick.js" />
+    <Content Include="assets\js\plugins\slick\slick.min.js" />
+    <Content Include="assets\js\plugins\stellar\jquery.stellar.js" />
+    <Content Include="assets\js\plugins\stellar\jquery.stellar.min.js" />
+    <Content Include="assets\js\repute-scripts.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -441,6 +593,15 @@
     <Content Include="package.json" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Production - goactionfig.com.pubxml" />
     <None Include="Properties\PublishProfiles\Staging - victortango.xaviersoftware.com.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -521,8 +682,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609061950480_InitialSecurityMigration.resx">
-      <DependentUpon>201609061950480_InitialSecurityMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611181346287_InitialSecurityMigration.resx">
+      <DependentUpon>201611181346287_InitialSecurityMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -543,7 +704,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52616</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/WebX.site</IISUrl>
+          <IISUrl>http://localhost:52616/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

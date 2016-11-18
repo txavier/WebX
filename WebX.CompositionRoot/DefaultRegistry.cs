@@ -17,8 +17,6 @@ using WebX.Core.Services;
 using AutoClutch.Core;
 using AutoClutch.Core.Interfaces;
 using AutoClutch.Repo;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebX.CompositionRoot
 {
@@ -43,7 +41,7 @@ namespace WebX.CompositionRoot
 
             For(typeof(ILogService<>)).Use(typeof(UserActionLogService<>));
 
-            For(typeof(IUserStore<>)).Use(typeof(UserStore<>));
+            For(typeof(Microsoft.AspNet.Identity.IUserStore<>)).Use(typeof(Microsoft.AspNet.Identity.EntityFramework.UserStore<>));
         }
     }
 }

@@ -10,10 +10,10 @@ using AutoClutch.Core.Interfaces;
 
 namespace WebX.Site.Controllers
 {
-    public class actionFiguresController : ODataApiController<blogEntry>
+    public class blogEntriesController : ODataApiController<blogEntry>
     {
-        public actionFiguresController(IService<blogEntry> actionFigureService)
-            : base(actionFigureService)
+        public blogEntriesController(IService<blogEntry> blogEntryService)
+            : base(blogEntryService)
         { }
 
         //public IHttpActionResult Get()
