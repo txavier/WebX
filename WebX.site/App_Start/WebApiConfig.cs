@@ -38,12 +38,12 @@ namespace WebX.Site
 
             // http://odata.github.io/WebApi/#13-01-modelbound-attribute
             // http://stackoverflow.com/questions/39515218/odata-error-the-query-specified-in-the-uri-is-not-valid-the-property-cannot-be
-            //config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
-            builder.EntitySet<blogEntry>("actionFigures");
+            builder.EntitySet<blogEntry>("blogEntries");
             //builder.EntityType<actionFigure>().Filter("imageUrl");
-            builder.EntityType<blogEntry>().Filter("name");
-            builder.EntityType<blogEntry>().Select("name");
+            //builder.EntityType<blogEntry>().Filter("name");
+            //builder.EntityType<blogEntry>().Select("name");
 
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",

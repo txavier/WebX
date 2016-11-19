@@ -220,7 +220,7 @@
         // Replace all $values with ''.
         // OData SearchEntities.
         function searchEntities(entityDataStore, searchCriteria, cache) {
-            return $http.get('api/users');
+            //return $http.get('api/users');
 
             return $http.get(odataUrl + entityDataStore, {
                 params:
