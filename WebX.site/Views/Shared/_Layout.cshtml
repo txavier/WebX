@@ -8,10 +8,11 @@
     <meta name="author" content="The Develovers">
     <!-- CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    @Styles.Render("~/Content/css")
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/theme")*@
 
     <!-- IE 9 Fallback-->
     <!--[if IE 9]>
@@ -61,7 +62,7 @@
                             @Html.Partial("_LoginPartial", new { @class = "button button_green" })
                         </li>
                     </ul>
-                    <div class="searchbox">
+                    @*<div class="searchbox">
                         <form method="post">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="search ...">
@@ -70,7 +71,7 @@
                                 </span>
                             </div>
                         </form>
-                    </div>
+                    </div>*@
                 </div>
                 <!-- END TOPBAR -->
                 <div class="navbar-header">
