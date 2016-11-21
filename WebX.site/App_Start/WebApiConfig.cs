@@ -41,9 +41,16 @@ namespace WebX.Site
             config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
             builder.EntitySet<blogEntry>("blogEntries");
-            //builder.EntityType<actionFigure>().Filter("imageUrl");
-            //builder.EntityType<blogEntry>().Filter("name");
-            //builder.EntityType<blogEntry>().Select("name");
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+                .AddProperty((typeof(blogEntry)).GetProperty("blogBodySummaryHtml"));
+
+            builder.EntitySet<author>("authors");
+
+            builder.EntitySet<user>("users");
+            builder.Namespace = "usersService";
+            builder.EntityType<user>().Collection
+                .Function("GetLoggedInUser")
+                .Returns<user>();
 
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",

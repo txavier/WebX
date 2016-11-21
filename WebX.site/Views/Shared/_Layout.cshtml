@@ -7,26 +7,26 @@
     <meta name="description" content="Responsive Multipurpose Bootstrap Theme">
     <meta name="author" content="The Develovers">
     <!-- CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
     @Styles.Render("~/Content/css")
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
     @*@Styles.Render("~/Content/theme")*@
 
     <!-- IE 9 Fallback-->
     <!--[if IE 9]>
-        <link href="assets/css/ie.css" rel="stylesheet">
+        <link href="/assets/css/ie.css" rel="stylesheet">
     <![endif]-->
     <!-- GOOGLE FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
     <!-- FAVICONS -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/repute144x144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/repute114x114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/repute72x72.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/repute57x57.png">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/repute144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/repute114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/repute72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/repute57x57.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png">
 </head>
 <body data-ng-app="app" ng-strict-di>
     <!-- WRAPPER -->
@@ -36,22 +36,22 @@
             <div class="container">
                 <!-- TOPBAR -->
                 <div class="topbar">
-                    <ul class="list-inline top-nav">
+                    @*<ul class="list-inline top-nav">
                         <li>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown"><img src="assets/img/flags/United-Kingdom.png" alt="United Kingdom"> United Kingdom <span class="caret"></span></button>
+                                <button type="button" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown"><img src="/assets/img/flags/United-Kingdom.png" alt="United Kingdom"> United Kingdom <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right country-selector" role="menu">
                                     <li>
-                                        <a href="#"><img src="assets/img/flags/United-Kingdom.png" alt="United Kingdom"> United Kingdom</a>
+                                        <a href="#"><img src="/assets/img/flags/United-Kingdom.png" alt="United Kingdom"> United Kingdom</a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="assets/img/flags/Japan.png" alt="Japan"> Japan</a>
+                                        <a href="#"><img src="/assets/img/flags/Japan.png" alt="Japan"> Japan</a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="assets/img/flags/China.png" alt="China"> China</a>
+                                        <a href="#"><img src="/assets/img/flags/China.png" alt="China"> China</a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="assets/img/flags/Germany.png" alt="Germany"> Germany</a>
+                                        <a href="#"><img src="/assets/img/flags/Germany.png" alt="Germany"> Germany</a>
                                     </li>
                                 </ul>
                             </div>
@@ -61,7 +61,8 @@
                         <li>
                             @Html.Partial("_LoginPartial", new { @class = "button button_green" })
                         </li>
-                    </ul>
+                    </ul>*@
+                    @Html.Partial("_LoginPartial", new { @class = "button button_green" })
                     @*<div class="searchbox">
                         <form method="post">
                             <div class="input-group input-group-sm">
@@ -80,7 +81,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a href="#" class="navbar-brand navbar-logo navbar-logo-bigger">
-                        <img src="assets/img/logo/repute-logo-nav.png" alt="Repute - Responsive Multipurpose Bootstrap Theme">
+                        <img src="/assets/img/logo/repute-logo-nav.png" alt="Repute - Responsive Multipurpose Bootstrap Theme">
                     </a>
                 </div>
                 <!-- MAIN NAVIGATION -->
@@ -119,7 +120,7 @@
                     <div class="col-md-4">
                         <!-- COLUMN 1 -->
                         <h3 class="sr-only">ABOUT US</h3>
-                        <img src="assets/img/logo/repute-logo-light.png" class="logo" alt="Repute">
+                        <img src="/assets/img/logo/repute-logo-light.png" class="logo" alt="Repute">
                         <p>Proactively aggregate B2B initiatives before extensive channels. Monotonectally extend interactive methods of empowerment through excellent applications. Rapidiously synergize visionary products with sticky technology.</p>
                         <br>
                         <address class="margin-bottom-30px">
@@ -197,13 +198,13 @@
     </div>
     <!-- END WRAPPER -->
     <!-- JAVASCRIPTS -->
-    <script src="assets/js/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/slick/slick.min.js"></script>
-    <script src="assets/js/plugins/stellar/jquery.stellar.min.js"></script>
-    <script src="assets/js/plugins/jquery-easypiechart/jquery.easypiechart.min.js"></script>
-    <script src="assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
-    <script src="assets/js/repute-scripts.js"></script>
+    <script src="/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/plugins/slick/slick.min.js"></script>
+    <script src="/assets/js/plugins/stellar/jquery.stellar.min.js"></script>
+    <script src="/assets/js/plugins/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+    <script src="/assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
+    <script src="/assets/js/repute-scripts.js"></script>
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/bootstrap")*@
     @Scripts.Render("~/bundles/angular")

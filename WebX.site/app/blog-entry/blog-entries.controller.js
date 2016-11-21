@@ -12,6 +12,7 @@
 
         vm.entityDataStore = 'blogEntries';
         vm.blogEntries = [];
+        vm.loggedInUser = {};
 
         activate();
 
@@ -22,12 +23,28 @@
                 sort: null,
                 search: null,
                 searchFields: null,
-                expand: 'author',
+                includeProperties: 'author',
                 q: null,
                 fields: null
             };
 
-            getBlogEntries(blogEntriesSearchCriteria);
+            getBlogEntries(blogEntriesSearchCriteria).then(getLoggedInUser).then(setEdit);
+        }
+
+        function setEdit(loggedInUser) {
+            for (var i = 0; i < vm.blogEntries.length; i++) {
+                if (loggedInUser.userName == vm.blogEntries[i].authorUserName) {
+                    vm.blogEntries[i].isAuthorizedEditor = true;
+                }
+            }
+        }
+
+        function getLoggedInUser() {
+            return dataService.getLoggedInUser().then(function (data) {
+                vm.loggedInUser = data;
+
+                return vm.loggedInUser;
+            });
         }
 
         function getBlogEntries(searchCriteria) {

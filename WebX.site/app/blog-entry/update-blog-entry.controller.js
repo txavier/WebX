@@ -23,7 +23,7 @@
                 sort: null,
                 search: null,
                 searchFields: null,
-                expand: null,
+                includeProperties: 'author',
                 q: 'blogEntryId eq ' + $routeParams.blogEntryId,
                 fields: null
             };
