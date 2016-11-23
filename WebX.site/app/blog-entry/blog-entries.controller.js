@@ -33,7 +33,7 @@
 
         function setEdit(loggedInUser) {
             for (var i = 0; i < vm.blogEntries.length; i++) {
-                if (loggedInUser.userName == vm.blogEntries[i].authorUserName) {
+                if (loggedInUser.userName == vm.blogEntries[i].author.authorUsername) {
                     vm.blogEntries[i].isAuthorizedEditor = true;
                 }
             }

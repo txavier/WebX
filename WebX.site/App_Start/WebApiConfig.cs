@@ -44,6 +44,15 @@ namespace WebX.Site
             builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
                 .AddProperty((typeof(blogEntry)).GetProperty("blogBodySummaryHtml"));
 
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+                .AddProperty((typeof(blogEntry)).GetProperty("monthAbbreviation"));
+
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+                .AddProperty((typeof(blogEntry)).GetProperty("day"));
+
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+                .AddProperty((typeof(blogEntry)).GetProperty("year"));
+
             builder.EntitySet<author>("authors");
 
             builder.EntitySet<user>("users");
