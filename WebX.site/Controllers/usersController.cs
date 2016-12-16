@@ -22,9 +22,11 @@ namespace WebX.Site.Controllers
 
         public IHttpActionResult GetLoggedInUser()
         {
-            var user = _userService.Queryable().FirstOrDefault(i => i.userName == User.Identity.Name);
+            //var user = _userService.Queryable().FirstOrDefault(i => i.userName == User.Identity.Name);
 
-            return Ok(user);
+            //return Ok(user);
+
+            return Ok(User?.Identity?.Name);
         }
     }
 }

@@ -56,7 +56,7 @@ namespace WebX.Site
                       "~/app/action-figures/update-action-figure.controller.js",
                       "~/app/action-figures/view-action-figure.controller.js",
                       "~/app/user/dashboard.controller.js",
-                      "~/app/home/home.controller.js",
+                      "~/app/layout/layout.controller.js",
                       "~/app/login/login.controller.js",
                       "~/app/blog-entry/blog-entries.controller.js",
                       "~/app/blog-entry/view-blog-entry.controller.js",

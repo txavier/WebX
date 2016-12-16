@@ -17,15 +17,6 @@ namespace WebX.Core.Models
             blogTopics = new HashSet<blogCategory>();
         }
 
-        [NotMapped]
-        public string monthAbbreviation { get; set; }
-
-        [NotMapped]
-        public int day { get; set; }
-
-        [NotMapped]
-        public int year { get; set; }
-
         public int blogEntryId { get; set; }
 
         public string title { get; set; }
@@ -44,25 +35,5 @@ namespace WebX.Core.Models
         public string imageBase64String { get; set; }
 
         public string blogBodyHtml { get; set; }
-
-        [NotMapped]
-        public string blogBodySummaryHtml
-        {
-            get
-            {
-                return GetBodySummaryHtml();
-            }
-            set
-            {
-            }
-        }
-
-        private string GetBodySummaryHtml()
-        {
-            var result = blogBodyHtml.Length > 839 ? blogBodyHtml.Substring(0, (int)Math.Round((double)blogBodyHtml.Length / 4)) + "..." :
-                blogBodyHtml;           
-
-            return result;
-        }
     }
 }
