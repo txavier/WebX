@@ -87,26 +87,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\EfQueryContractTotalsPerSection.cs" />
+    <Compile Include="Data\EfDataDbContext.cs" />
+    <Compile Include="Data\TrackingConfig.cs" />
     <Compile Include="Getters\EnvironmentConfigSettingsGetter.cs" />
-    <Compile Include="Getters\ImportFilesGetter.cs" />
-    <Compile Include="Getters\SqlServerReportGetter.cs" />
+    <Compile Include="Migrations\201610210353571_initialMigration.cs" />
+    <Compile Include="Migrations\201610210353571_initialMigration.Designer.cs">
+      <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610222020406_AddBlogModels.cs" />
+    <Compile Include="Migrations\201610222020406_AddBlogModels.Designer.cs">
+      <DependentUpon>201610222020406_AddBlogModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610230427274_ChangedTableNames.cs" />
+    <Compile Include="Migrations\201610230427274_ChangedTableNames.Designer.cs">
+      <DependentUpon>201610230427274_ChangedTableNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.cs" />
+    <Compile Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.Designer.cs">
+      <DependentUpon>201610251856245_RemoveSummaryFromBlogEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Facades\DocumentManagementServiceFacade.cs" />
-    <Compile Include="Web References\DocumentManagementService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\ReportExecutionService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -122,83 +127,29 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\DocumentManagementService\DocumentObject.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\DocumentManagementService\DocumentObjectDetail.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\DocumentManagementService\FileObject.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\DocumentManagementService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\DocumentManagementService\Service1.wsdl" />
-    <None Include="Web References\ReportExecutionService\DocumentMapNode.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ReportExecutionService\ExecutionInfo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ReportExecutionService\ExecutionInfo2.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ReportExecutionService\Extension.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\ReportExecutionService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\ReportExecutionService\reportexecution2005.wsdl" />
-    <None Include="Web References\ReportExecutionService\Warning.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebX.Core\WebX.Core.csproj">
       <Project>{3b826046-ac3c-4f1f-9a74-7a7cf8c47a19}</Project>
       <Name>WebX.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebX.Data\WebX.Data.csproj">
-      <Project>{1ef75c9b-76ab-4f7e-b2f2-2698773dfa72}</Project>
-      <Name>WebX.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://lfkbwtlabsql01/ReportServer/reportexecution2005.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ReportExecutionService\</RelPath>
-      <UpdateFromURL>http://lfkbwtlabsql01/ReportServer/reportexecution2005.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ContractTrackingManagement_Infrastructure_ReportExecutionService_ReportExecutionService</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://oitappsdev02/dms_ws/">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\DocumentManagementService\</RelPath>
-      <UpdateFromURL>http://oitappsdev02/dms_ws/</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>ContractTrackingManagement_Infrastructure_DocumentManagementService_Service1</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\DocumentManagementService\Service1.disco" />
+    <EmbeddedResource Include="Migrations\201610210353571_initialMigration.resx">
+      <DependentUpon>201610210353571_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610222020406_AddBlogModels.resx">
+      <DependentUpon>201610222020406_AddBlogModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610230427274_ChangedTableNames.resx">
+      <DependentUpon>201610230427274_ChangedTableNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610251856245_RemoveSummaryFromBlogEntry.resx">
+      <DependentUpon>201610251856245_RemoveSummaryFromBlogEntry.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

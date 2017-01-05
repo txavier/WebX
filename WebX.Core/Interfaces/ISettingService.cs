@@ -10,9 +10,5 @@ namespace WebX.Core.Interfaces
     public interface ISettingService : IService<WebX.Core.Models.setting>
     {
         string GetSettingValueBySettingKey(string settingKey);
-
-        System.Collections.Generic.IEnumerable<WebX.Core.Models.setting> Search(WebX.Core.Objects.SearchCriteria searchCriteria, bool lazyLoadingEnabled = true, bool proxyCreationEnabled = true);
-
-        int SearchCount(WebX.Core.Objects.SearchCriteria searchCriteria);
     }
 }
