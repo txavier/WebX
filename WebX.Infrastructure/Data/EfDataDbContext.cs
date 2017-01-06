@@ -16,7 +16,7 @@ namespace WebX.Data
 
         public virtual DbSet<user> users { get; set; }
 
-        public virtual DbSet<userActionLog> userActionLogs { get; set; }
+        public virtual DbSet<AutoClutch.Core.Models.userActionLog> userActionLogs { get; set; }
 
         public virtual DbSet<setting> settings { get; set; }
 

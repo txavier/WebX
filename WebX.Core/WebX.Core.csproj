@@ -36,12 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Auto.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoClutch.AutoCore.4.5\lib\net452\Auto.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Auto.Repo, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoClutch.AutoRepo.4.4\lib\net452\Auto.Repo.dll</HintPath>
+      <HintPath>..\packages\AutoClutch.AutoRepo.4.5\lib\net452\Auto.Repo.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Auto.Service, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoClutch.AutoService.4.4\lib\net452\Auto.Service.dll</HintPath>
+      <HintPath>..\packages\AutoClutch.AutoService.4.5\lib\net452\Auto.Service.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">

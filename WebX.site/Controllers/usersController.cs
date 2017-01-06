@@ -1,5 +1,4 @@
-﻿using Auto.Controller.Objects;
-using WebX.Core.Models;
+﻿using WebX.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AutoClutch.Core.Interfaces;
+using AutoClutch.Controller;
 
 namespace WebX.Site.Controllers
 {
@@ -26,7 +26,7 @@ namespace WebX.Site.Controllers
 
             //return Ok(user);
 
-            return Ok(User?.Identity?.Name);
+            return Ok(User?.Identity?.Name ?? "");
         }
     }
 }

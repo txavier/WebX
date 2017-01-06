@@ -1,5 +1,4 @@
 ﻿using AutoClutch.Repo.Interfaces;
-using AutoClutch.Repo.Objects;
 using StructureMap.Configuration.DSL;
 using StructureMap;
 using StructureMap.Graph;
@@ -17,6 +16,7 @@ using WebX.Core.Services;
 using AutoClutch.Core;
 using AutoClutch.Core.Interfaces;
 using AutoClutch.Repo;
+using AutoClutch.Log.Services;
 
 namespace WebX.CompositionRoot
 {
@@ -39,7 +39,7 @@ namespace WebX.CompositionRoot
 
             For<IEnvironmentConfigSettingsGetter>().Use<EnvironmentConfigSettingsGetter>();
 
-            For(typeof(ILogService<>)).Use(typeof(UserActionLogService<>));
+            For(typeof(AutoClutch.Core.Interfaces.ILogService<>)).Use(typeof(UserActionLogService<>));
 
             For(typeof(Microsoft.AspNet.Identity.IUserStore<>)).Use(typeof(Microsoft.AspNet.Identity.EntityFramework.UserStore<>));
         }

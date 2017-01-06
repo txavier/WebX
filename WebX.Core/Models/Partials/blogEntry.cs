@@ -11,18 +11,23 @@ namespace WebX.Core.Models
     public partial class blogEntry
     {
         [NotMapped]
-        public string monthAbbreviation { get { return GetMonthAbbreviation(this.publishedDate); } }
+        public string monthAbbreviation
+        {
+            get { return GetMonthAbbreviation(this.publishedDate); }
+            set { }
+        }
 
         [NotMapped]
-        public int day { get { return this.publishedDate.Day; } }
+        public int day { get { return this.publishedDate.Day; } set { } }
 
         [NotMapped]
-        public int year { get { return this.publishedDate.Year; } }
+        public int year { get { return this.publishedDate.Year; } set { } }
 
         [NotMapped]
         public string blogBodySummaryHtml
         {
             get { return GetBodySummaryHtml(); }
+            set { }
         }
 
         public string GetMonthAbbreviation(DateTime publishedDate)
