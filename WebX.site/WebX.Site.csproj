@@ -1581,6 +1581,7 @@
     <Content Include="wwwroot\lib\textAngular\src\textAngular.css" />
     <Content Include="wwwroot\lib\textAngular\src\textAngularSetup.js" />
     <Content Include="wwwroot\lib\textAngular\src\validators.js" />
+    <None Include="Properties\PublishProfiles\deltanovember.xaviersoftware.com - Web Deploy %283%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1639,7 +1640,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1680,9 +1680,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52616</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52616/</IISUrl>
+          <IISUrl>http://localhost:7811/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
